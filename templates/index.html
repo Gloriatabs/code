@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <title>Flight prediction Webapp</title>
+    <meta charset="utf-8" name="viewport" 
+    content= "width=device-width, initial-scale=1.0">
+<style >
+	
+
+
+p{
+  line-height: 1.2;
+  color: black !important;
+  font-family: Raleway-SemiBold, sans-serif !important;
+  font-family: Raleway-SemiBold;
+  font-size: 12px !important;
+  text-align: justify;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  font-family: Raleway-SemiBold, sans-serif;
+  background-color:powderblue;
+
+}
+
+.container_main{
+background-color:powderblue;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1px;
+  margin-bottom: auto;
+	font-family: Raleway-SemiBold, sans-serif;
+  display: block;
+}
+
+a {
+	font-family: Raleway-SemiBold;
+	font-size: 12px;
+	line-height: 1.2;
+	color: #666666;
+	margin: 0px;
+}
+
+.main{
+  margin-top: 0.3vh;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+.highlight{
+  text-decoration: underline !important;
+  color: #9D50BB !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-bottom: 1px;
+}
+
+.main_heading{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 25px !important;
+
+  margin-left: auto;
+  margin-right: auto;
+  color: #4f81bd;
+}
+
+input {
+  border-radius: 10px !important;
+  width: 70%; 
+}
+
+label { 
+  float: right; 
+} 
+
+span { 
+  display: block; 
+  overflow: hidden; 
+  padding: 0px 4px 0px 6px; 
+} 
+
+button {
+  border-radius: 20px !important;
+	outline: none !important;
+  height: 30px !important;
+  width: 200px;
+  color: black !important;
+
+}
+button.btnsub{
+	color: black;
+  float:right;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+table.t1 {
+  width:50%;
+  margin-left: 12%;
+  margin-top: 0%;
+  border: 1px border;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.t1 th, .t1 td {
+  padding: 4px 4px;
+}
+.t1 thead th {
+  background: #4f81bd;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 12px;
+  color: #fff;
+}
+.t1 tr {
+  border-right: 1px solid #95b3d7;
+  border-left: 1px solid #95b3d7;
+}
+.t1 tbody tr {
+  border-bottom: 1px solid #95b3d7;
+}
+.t1 tbody tr:nth-child(odd) {
+  background: #dbe5f0;
+  border-right: 1px solid #95b3d7;
+}
+.t1 tbody tr:nth-child(even){
+	  background: #dbe5f0;
+
+  border-right: 1px solid #95b3d7;
+}
+
+.t1 tfoot th {
+  background: #4f81bd;
+  text-align: left;
+  font-weight: normal;
+  font-size: 12px;
+  color: rgb(247, 247, 247);
+}
+
+
+
+#div1 {
+    background-color:powderblue;
+    width:35.33%;
+    float:right;
+    height:500px;
+
+}
+
+#div2 {
+    background-color:powderblue;
+      width:35.33%;
+      float: left;
+       height:500px;
+}
+  #div3 {
+    background-color:powderblue;
+      width:65.33%;
+      margin: O auto;
+       height:500px;
+}
+
+img{
+
+	opacity: 0.8;
+
+
+}
+
+
+</style>
+      
+  </head>
+  
+
+
+
+
+  <body>
+      <div class="sub_container" id="holder">
+          <table>
+          	<br>
+            <td><center><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flight prediction Webapp</h1></center></td>
+
+        </table>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+
+</div>
+
+
+<form action="\pred" method="post">
+<div id="div2" align="center">
+
+<br>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Select Date of Departure</h4>
+<span>
+                      <input  class="form-control" type= "date" name="Departure_date" placeholder="" required="required" />
+                    </span>
+  </div>
+</div>
+<br>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Enter Source city</h4>
+<span>
+                      <input list="Source_list" name="source" type="text" required="required">
+             <datalist id="Source_list">
+               <option value="Delhi"/>
+                <option value="Kolkata"/>
+                <option value="Mumbai"/>
+               <option value="Chennai"/>
+               <option value="Banglore"/>
+             </datalist> 
+                    </span>
+
+
+
+  </div>
+</div>
+<br>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Stoppage</h4>
+<span>
+                     <input list="stop_list"  name="stoppage" type="text" required="required">
+             <datalist id="stop_list">
+               <option value="0"/>
+                <option value="1"/>
+                <option value="2"/>
+               <option value="3"/>
+               <option value="4"/>
+              
+             </datalist> 
+
+
+                    </span>
+  </div>
+</div>
+<br>
+</div>
+
+
+
+<div id="div1" align="center">
+<br>
+
+<div class="card" style="width: 20rem;" >
+  <div class="card-body">
+    <h4 class="card-title">Select Date of Arrival</h4>
+    <span>
+                      <input  class="form-control" type= "date" name="Arrival_date" placeholder="" required="required" />
+                    </span>
+
+  </div>
+</div>
+<br>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Enter Destination city</h4>
+<span>
+                      
+<input list="destination_list"  name="Destination"  type="text"  required="required"> 
+          <datalist id="destination_list">
+           
+               <option value="New Delhi"/>
+               <option value="Banglore"/>
+               <option value="Kolkata"/>
+                   <option value="Hyderabad"/>
+                <option value="Cochin"/>
+                <option value="Delhi"/>
+              
+             </datalist> 
+
+
+                    </span>
+  </div>
+</div>
+<br>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Select Airline</h4>
+<span>
+                      
+<input list="airline_list"  name="Airline"  type="text"  required="required">
+          <datalist id="airline_list">
+  
+            <option value="Air Asia"/>
+            <option value="GoAir"/>
+            <option value="Multiple carriers Premium economy"/>
+            <option value="Jet Airways Business"/>
+            <option value="Vistara Premium economy"/>
+            <option value="Trujet"/>
+                      <option value="Jet Airways"/>
+            <option value="IndiGo"/>
+            <option value="Air India"/>
+            <option value="Multiple carriers"/>
+            <option value="SpiceJet"/>
+            <option value="Vistara"/>
+            </datalist> 
+
+
+                    </span>
+  </div>
+</div>
+<br>
+
+</div>
+
+
+<div id="div3">
+<br>
+<img src="{{url_for('static', filename='flight.png')}}" >
+<br>
+<br>
+
+<div align="center">
+<button type="submit">Submit details & predict</button>
+</div>
+
+<br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+</div>
+</form>
+
+  </body>
+</html>
+
