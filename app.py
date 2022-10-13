@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-model = load_model('tune_rf')
+model = pickle.load(open('tune_rf.pkl', 'rb'))
 
 
 
