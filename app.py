@@ -17,7 +17,7 @@ def home():
 
 
 
-@app.route('/pred',methods=['GET','POST'])
+@app.route('/pred',methods=['POST'])
 
 def pred():
 
