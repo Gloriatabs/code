@@ -11,7 +11,7 @@ model = pickle.load(open('tune_rf.pkl', 'rb'))
 
 
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('index.html')
 
